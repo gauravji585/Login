@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Verify OTP</title>
+<style>
+  body { font-family: Arial; }
+  .box { width: 340px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+  input { width:100%; padding:10px; margin-top:8px; }
+  button { margin-top: 12px; padding:10px; width:100%; background:#2b6cb0; color:#fff; border:0; }
+</style>
+</head>
+<body>
+<div class="box">
+<h3>Verify OTP</h3>
+
+<p>OTP sent to <b>{{email}}</b></p>
+
+{% with messages = get_flashed_messages() %}
+  {% for m in messages %}<p style="color:red">{{m}}</p>{% endfor %}
+{% endwith %}
+
+<form method="post">
+  <input name="otp" placeholder="Enter OTP" required>
+  <button>Verify</button>
+</form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<style>
+  body { font-family: Arial; }
+  .box { width: 380px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+  input { width: 100%; padding: 10px; margin-top: 8px; }
+  button { margin-top: 12px; padding: 10px; width: 100%; background: #4CAF50; color:#fff; border:0; }
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<h3>Create Account</h3>
+
+{% with messages = get_flashed_messages() %}
+  {% for m in messages %}<p style="color:red">{{m}}</p>{% endfor %}
+{% endwith %}
+
+<form method="post">
+  <input name="name" placeholder="Your Name" required>
+  <input name="age" type="number" placeholder="Age" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <input name="phone" placeholder="Phone" required>
+  <input name="password" type="password" placeholder="Password" required>
+  <button>Send OTP</button>
+</form>
+
+</div>
+
+</body>
+</html>
